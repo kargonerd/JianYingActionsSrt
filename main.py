@@ -52,10 +52,7 @@ if __name__ == "__main__":
 
     # 下面进行一些Config中的语法检查
     Api.Logic_warp.echo("Grammar Checking.")
-    if args.mode == "Ga":
-        try:
-            Config["Webhooks"] += json.loads(os.environ["WEBHOOKS"])
-        except KeyError: Api.Logic_warp.echo("No Webhooks Detected In Github Action Keys. Passed ...")
+    
     _w_n = len(Config["Webhooks"])
     for i in Config["Sources"]:
         if "Webhooks" in i:
